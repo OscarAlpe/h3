@@ -55,11 +55,20 @@ class SiteController extends Controller
     }
 
     public function actionPrueba() {
-        $datos = "<scrpy>alert('1');</script>";
+        $datos = "<script>alert('1');</script>";
         
-        return $this->render("index",[
+        return $this->render("prueba",[
             "datos" => $datos
         ]);
     }
     
+    public function actionFormulario() {
+        if ($datos = Yii::$app->request->post()) {
+            return $this->render("prueba", [
+                "datos" => $datos["usuario"]
+            ]);
+        } else {
+            return $this->render("formulario");
+        }
+    }
 }
