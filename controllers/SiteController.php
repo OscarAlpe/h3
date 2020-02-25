@@ -54,5 +54,11 @@ class SiteController extends Controller
         ];
     }
 
-
+    public function actionIndex() {
+        $datos = "<scrpy>alert('1');</script>";
+        
+        return $this->render("index",[
+            "datos" => $datos
+        ]);
+    }
 }
