@@ -13,8 +13,8 @@ class Usuarios extends Model {
     
     public function rules() {
         return [
-          [['nombre','edad','email'], 'required']  ,
-          ['email','email']
+          [['nombre','apellidos','edad','email'], 'required'],
+          ['email','email'],
         ];
     }
     
