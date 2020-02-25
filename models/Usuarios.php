@@ -13,8 +13,9 @@ class Usuarios extends Model {
     
     public function rules() {
         return [
-          [['nombre','apellidos','edad','email'], 'required'],
-          ['email','email'],
+          [['nombre','apellidos','edad','email'], 'required', 'message' => '{attribute} es obligatorio'],
+          ['email','email', 'message' => 'Escribir correctamente el correo electronico'],
+          ['edad', 'number','min'=>18, 'max'=>65,'tooBig'=>'La edad debe estar entre 18 y 65', 'tooSmall'=>'La edad debe estar entre 18 y 65']
         ];
     }
     
