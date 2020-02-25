@@ -71,4 +71,14 @@ class SiteController extends Controller
             return $this->render("formulario");
         }
     }
+    
+    public function actionUsuarios() {
+        $model = new \app\models\Usuarios();
+        if ($model->load(Yii::$app->request->post())) {
+            return $this->render('mostrarUsuarios', ['model' => $model]);
+        } else {
+            return $this->render('formularioUsuarios', ['model' => $model]);
+        }
+    }
+    
 }
