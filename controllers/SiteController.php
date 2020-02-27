@@ -80,8 +80,30 @@ class SiteController extends Controller
             return $this->render('formularioUsuarios', ['model' => $model]);
         }
     }
-    
+
     public function actionIndex() {
         return $this->render("index");
     }
+    
+    public function actionMensaje() {
+        return $this->render("mensaje",[
+            "titulo"=>"Ejemplo de clase",
+            "texto"=>"Texto de ejemplo"
+        ]);
+    }
+
+    public function actionMensaje1() {
+        return $this->render("mensaje1",[
+            "titulo"=>"Ejemplo de clase",
+            "pie"=>"Pie"
+        ]);
+    }
+
+    public function actionMensaje2() {
+        return $this->render("mensaje2",[
+            "titulo"=>"Ejemplo de clase",
+            "contenido"=>"Texto de ejemplo"
+        ]);
+    }
+
 }
